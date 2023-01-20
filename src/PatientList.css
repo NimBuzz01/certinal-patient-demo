@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  display: flex;
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  flex-direction: column;
+  max-height: 100vh;
+  max-width: 80%;
+}
+
+.utils {
+  display: flex;
+}
+
+.header-col {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.fetch-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: #00255C;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pg-title {
+  padding: 1em 0 0 2em;
+  color: #00255C;
+}
+
+.patient-list {
+  margin: 1em 0 4em 0;
+}
+
+.patient {
+  border-radius: 10px;
+  margin: 1em 4em;
+  padding: 0.5em;
+  border: 1px solid #00255C;
+}
+
+.utils {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #00255C;
+  border-bottom: 1px solid #00255C;
+  margin-left: 1em;
+}
+
+.refresh-btn {
+  background: none;
+  border: none;
+  font-size: 25px;
+  transition: 0.5s;
+  margin: 0 1em 0 2em;
+}
+
+.refresh-btn:hover {
+  color: rgb(200, 2, 2);
+}
+
+.fetch-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #00255C;
+  font-weight: 500;
+  transition: 0.2s;
+  border-radius: 10px;
+  padding: 0.4em 0.6em;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center; 
+  margin-right: auto;
+  margin-left: 0.5em; 
+}
+
+.search-bar input {
+  border-color: #00255C;
+  border-radius: 50px;
+  padding: 0.4em 0.8em;
+  margin-left: 0.5em;
+  color: #00255C;
+  font-size: 18px;
+}
+
+.search-btn {
+  border: 2px solid #00255C;
+  padding: 0.5em;
+  border-radius: 50px;
+  margin-left: 0.5em;
+  transition: 0.2s;
+  font-size: 20px;
+}
+
+.search-btn:hover {
+  background-color: #00255C;
+  color: white;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.patient-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #00255C;
+  padding-left: 1rem;
+}
+
+.patient-name span {
+  color: #0038FF;
+}
+
+.info-modal {
+  border-top: 1px solid #00255C;
+  margin-top: 0.6em;
+  width: 100%;
+  padding-left: 1em;
+  color: #00255C;
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+.info-modal p span {
+  display: inline-block;
+  width: 200px;
+}
+
+.status-container {
+  margin-left: auto;
+}
+
+.status-container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 210px;
+  font-size: 18px;
+  margin-right: 0.5em;
+}
+
+.btn {
+  appearance: button;
+  background-color: #00255C;
+  border-radius: 0.6rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0.6rem;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.btn:focus:not(:focus-visible),
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  background-color: #032f70;
+}
+
+.btn:focus {
+  background-color: #032f70;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+.btn:active {
+  background-color: #032f70;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.btn:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+.btn:disabled {
+  background-image: none;
+  box-shadow: none;
+  background-color: #757575;
+  pointer-events: none;
+}
+
+.btn-container {
+  display: flex;
+  padding: 1em;
+}
+
+#email-btn {
+  margin-right: auto;
+  margin-left: -0.8em;
+}
+
+.toggle-btn {
+  margin: 0 0.6rem;
+  background: none;
+  border: none;
+  object-fit: cover;
+  font-size: 30px;
+  transition: 0.5s;
+}
+
+.toggle-btn:hover {
+  color: rgb(200, 2, 2);
+}
+
+#search-title {
+  font-weight: 500;
+}
+
+footer {
+  opacity: 0.65;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  width: 80%;
+}
+
+.footer-container p {
+  margin-left: 0.2em;
+}
