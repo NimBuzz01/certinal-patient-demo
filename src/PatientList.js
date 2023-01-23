@@ -53,7 +53,7 @@ export default function PatientList() {
     } else {
       setTemp("a");
     }
-  }
+  };
 
   const makeAPICalls = () => {
     // patients.forEach((patient) => {
@@ -67,22 +67,22 @@ export default function PatientList() {
           console.log(`Patient ${patient.id} data received successfully.`);
           patient.isDocReady = true;
           patient.isPending = false;
-          Swal.fire({
-            text: patient.name + " signature found!",
-            icon: "success",
-            confirmButtonColor: "#00255C",
-          });
+          // Swal.fire({
+          //   text: patient.name + " signature found!",
+          //   icon: "success",
+          //   confirmButtonColor: "#00255C",
+          // });
           refreshState();
         } else {
           console.error(
             `Patient ${patient.id} request failed with status code ${response.status}.`
           );
           patient.isDocReady = false;
-          Swal.fire({
-            text: patient.name + " signature not found!",
-            icon: "error",
-            confirmButtonColor: "#00255C",
-          });
+          // Swal.fire({
+          //   text: patient.name + " signature not found!",
+          //   icon: "error",
+          //   confirmButtonColor: "#00255C",
+          // });
           refreshState();
         }
       })
@@ -125,22 +125,31 @@ export default function PatientList() {
   };
 
   function handleDocumentDownload(patient) {
-    let timerInterval;
+    // let timerInterval;
+    // Swal.fire({
+    //   title: "Please wait... Your file is being downloaded!",
+    //   timer: 3000,
+    //   timerProgressBar: true,
+    //   didOpen: () => {
+    //     Swal.showLoading();
+    //     const b = Swal.getHtmlContainer().querySelector("b");
+    //     timerInterval = setInterval(() => {
+    //       b.textContent = Swal.getTimerLeft();
+    //     }, 100);
+    //   },
+    //   willClose: () => {
+    //     clearInterval(timerInterval);
+    //   },
+    // });
     Swal.fire({
-      title: "Please wait... Your file is being downloaded!",
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        const b = Swal.getHtmlContainer().querySelector("b");
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft();
-        }, 100);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
+      title: "Please wait",
+      text: "Your file is being downloaded",
+      icon: "info",
+      showCancelButton: false,
+      showConfirmButton: false,
+      allowOutsideClick: false,
     });
+
     // Api call to get document link
     axios
       .get(
@@ -157,26 +166,20 @@ export default function PatientList() {
         link.setAttribute("download", patient.id + "-signeddoc.pdf");
         document.body.appendChild(link);
         link.click();
+        Swal.close();
       });
   }
 
   function handleReportDownload(patient) {
-    let timerInterval;
     Swal.fire({
-      title: "Please wait... Your file is being downloaded!",
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        const b = Swal.getHtmlContainer().querySelector("b");
-        timerInterval = setInterval(() => {
-          b.textContent = Swal.getTimerLeft();
-        }, 100);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      },
+      title: "Please wait",
+      text: "Your file is being downloaded",
+      icon: "info",
+      showCancelButton: false,
+      showConfirmButton: false,
+      allowOutsideClick: false,
     });
+
     // Api call to get report link
     axios
       .get(
@@ -193,6 +196,7 @@ export default function PatientList() {
         link.setAttribute("download", patient.id + "-auditreport.pdf");
         document.body.appendChild(link);
         link.click();
+        Swal.close();
       });
   }
 
